@@ -4,18 +4,18 @@ import './assets/app.css'
 
 function App() {
 
-  const [count, setCount] =useState(0)
-  const [data, setData] = useState('')
-
+  const [count, setCount] =useState(0);
+  const [data, setData] = useState('');
 
    async function fetchData() {
-    if(count >=1 && count < 10){
-      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
-      const list = await response.json()
-      setData(list)
+    if(count >=1 && count < 10 && count.length == 1){
+      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`);
+      const list = await response.json();
+      setData(list);
     }
-    else setData('')
+    else setData('');
   }
+
   
   return (
     <>
